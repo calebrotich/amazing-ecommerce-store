@@ -1,3 +1,24 @@
+body {
+  background-color: #F5F5F5;
+}
+.Container {
+  margin: 0;
+}
+
+.CarouselHolder {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.CarouselHolder {
+  margin-top: 100px;
+}
+
+.DetailHolder {
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
 .App {
   text-align: center;
 }
@@ -19,4 +40,28 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.CartButtonHolder {
+  padding-top: 20px;
+}
+
+.DescriptionHolder {
+  min-height: 100px;
+}
+
+.CarouselContent {
+  background-image: url('./images/ecommercebg.jpg');
+  height: 100%;
+  padding: 50px;
+}
+
+.ButtonContainer, .CarouselLeft, .CarouselRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button {
+  background-color: #66CCF5;
 }
