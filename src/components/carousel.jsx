@@ -27,56 +27,57 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const  CarouselItems = () => {
+const CarouselItems = () => {
   const [selectedItem, setSelectedItem] = React.useState(products[0]);
   const classes = useStyles();
 
   return (
     <Fragment>
- <Slider autoplay={1000}>
-    {products.map((item, index) => {
-      let item_image = item.image_url
-      return (
-      <div
-       key={index}
-       >
-        <Grid className="CarouselContent" container>
-          <Grid item xs={4}  className="CarouselLeft">
-          <Paper elevation={0}>
-            <img src={require(`../images/${item_image}`)} alt="No item" />
-          </Paper>
-        </Grid>
-        <Grid container xs={8} className="CarouselRight">
-          <Grid item xs={12}>
-            <Box component="fieldset" mb={3} borderColor="transparent">
-              <Typography component="legend" variant="h4">{item.name}</Typography>
-              <Rating value={item.rating} readOnly />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid container className="ButtonContainer">
-          <Button
-           variant="contained"
-           color="primary"
-           className={classes.button}
-           onClick={() => {
-            setSelectedItem(item);
-            document.getElementById('detail')
-              .scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-            }}
-          >
-            Details
+      <Slider autoplay={1000}>
+        {products.map((item, index) => {
+          let item_image = item.image_url
+          return (
+            <div
+              key={index}
+            >
+              <Grid className="CarouselContent" container>
+                <Grid item xs={4} className="CarouselLeft">
+                  <Paper elevation={0}>
+                    <img src={require(`../images/${item_image}`)} alt="No item" />
+                  </Paper>
+                </Grid>
+                <Grid container xs={8} className="CarouselRight">
+                  <Grid item xs={12}>
+                    <Box component="fieldset" mb={3} borderColor="transparent">
+                      <Typography component="legend" variant="h4">{item.name}</Typography>
+                      <Rating value={item.rating} readOnly />
+                    </Box>
+                  </Grid>
+                </Grid>
+                <Grid container className="ButtonContainer">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    onClick={() => {
+                      setSelectedItem(item);
+                      document.getElementById('detail')
+                        .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                    }}
+                  >
+                    Details
           </Button>
-        </Grid>
-        </Grid>
-    </div>
-    )})}
-  </Slider>
-  <div className="DetailHolder" id="detail">
-    <ItemDetails product={selectedItem} />
-  </div>
-  </Fragment>
+                </Grid>
+              </Grid>
+            </div>
+          )
+        })}
+      </Slider>
+      <div className="DetailHolder" id="detail">
+        <ItemDetails product={selectedItem} />
+      </div>
+    </Fragment>
   );
 }
 
-export  default  CarouselItems;
+export default CarouselItems;

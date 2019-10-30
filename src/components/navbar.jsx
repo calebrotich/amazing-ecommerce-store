@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar  position="fixed">
+      <AppBar position="fixed">
         <Toolbar className={classes.navbar}>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             AMAZING STORE
           </Typography>
-          <Button color="inherit" style={{backgroundColor: '#0e9fd8'}}>ALL</Button>
+          <Button color="inherit" style={{ backgroundColor: '#0e9fd8' }}>ALL</Button>
           <Button color="inherit">MEN</Button>
           <Button color="inherit">LADIES</Button>
           <Button color="inherit">KIDS</Button>
